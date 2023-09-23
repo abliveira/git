@@ -1,2 +1,3 @@
-# git
-Anotações e referências para o uso de Git
+### Referências
+
+[Using Git for Distributed Development](https://www.coursera.org/learn/git-distributed-development/)
