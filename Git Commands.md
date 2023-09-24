@@ -180,7 +180,7 @@ git bisect logs
 
 ## Branches
 
-## git branch
+### git branch
 
 List the branches
 
@@ -212,7 +212,7 @@ Delete a branch. It cannot be the current branch
 git branch -d [branch_name]
 ```
 
-## git checkout
+### git checkout
 
 Switch from the current working branch to another
 
@@ -221,6 +221,37 @@ git checkout [target_branch_name]
 ```
 
 Note: Git will refuse to change if there's uncommited files in the current working branch
+
+### git merge
+
+Before merging, checkout to the target branch, such main. Is recommended to commit or remove any pending changes to avoid confusion later
+
+```bash
+git merge [target_branch_name]
+```
+
+### git rebase
+
+If a branch was created from another, such the main branch, and the main branch had newer commits, it is possible to apply the commits from the main to the splited branch, pushing foward the commits of the splited branch. In summary, the splitted branch incorporate the latest changes from another branch, without yet merging this branch into the other branch
+
+```bash
+$ git checkout develop
+$ git rebase main develop
+```
+
+Before
+    
+            A---B---C develop
+            /
+    D---E---F---G master
+
+After rebase
+
+                    A'--B'--C' develop
+                    /
+    D---E---F---G master
+
+Some conflicts may be solved in order to complete the rebase
 
 ## Managing Repositories
 
