@@ -49,6 +49,44 @@ Every time you do a commit, git assigns a unique 160-bit 40-character hexadecima
 
 ### git diff
 
+Display differences in a number of ways
+
+Shows the differences between the current version and the last commit
+
+```bash
+git diff
+```
+
+Shows the differences between the current version and a given commit
+
+```bash
+git diff earlier_commit
+```
+
+Shows the differences between the staged changes in the index and a given commit
+
+```bash
+git diff --cached earlier_commit
+```
+
+Shows the differences between two commits
+
+```bash
+git diff one_commit another_commit
+```
+
+It is possible to get only brief statistics using --stat
+
+```bash
+git diff --stat one_commit another_commit
+```
+
+It is possible to refine the search path
+
+```bash
+git diff --stat one_commit another_commit directory1/directory2
+```
+
 ### git log
 
 display the history of commits with git using the command git log
@@ -140,7 +178,67 @@ When done, check the history of your bisection with
 git bisect logs
 ```
 
+## Branches
+
+## git branch
+
+List the branches
+
+```bash
+git branch
+```
+
+List the branches with a detailed history
+
+```bash
+git branch -v
+```
+
+Creating a new branch
+
+```bash
+git branch [branch_name] [starting_point]
+```
+
+If you no starting_point provided, a copy of the active branch as of its last commit will be created
+
+```bash
+git branch [branch_name]
+```
+
+Delete a branch. It cannot be the current branch
+
+```bash
+git branch -d [branch_name]
+```
+
+## git checkout
+
+Switch from the current working branch to another
+
+```bash
+git checkout [target_branch_name]
+```
+
+Note: Git will refuse to change if there's uncommited files in the current working branch
+
 ## Managing Repositories
+
+### git show
+
+Show details about a particular file or commit
+
+```bash
+git show [<options>] [<object>…​]
+```
+
+Example: Shows a file from a particular commit
+
+```bash
+git show 650bb48:main.c
+```
+
+To exit, type 'q'
 
 ### git gc
 
