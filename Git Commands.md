@@ -16,8 +16,10 @@ Removes a file from the working tree and the index
 
 you want to remove a file that has been staged but not committed, you have to add the -cache option, as in:
 
+```bash
 $ git add myfile
 $ git rm myfile --cached
+```
 
 ### git mv
 
@@ -89,7 +91,7 @@ git diff --stat one_commit another_commit directory1/directory2
 
 ### git log
 
-display the history of commits with git using the command git log
+Display the history of commits with git using the command git log
 
 ### git revert
 
@@ -99,7 +101,7 @@ You can back out a particular commit with
 git revert commit_name
 ```
 
-commit_name can be specified in a number of ways and need not be the most recent.
+commit_name can be specified in a number of ways and need not be the most recent
 
 Commits can be delineated with:
 
@@ -145,7 +147,9 @@ git blame file
 
 Use binary search to find the commit that introduced a bug. bisect helps to test commits until you find a good one. if a bad change has been done somewhere in the last 1024 commits, you can find it in no more than 10 bisection steps
 
+```bash
 git bisect <subcommand> <options>
+```
 
 Type:
 
@@ -253,14 +257,64 @@ After rebase
 
 Some conflicts may be solved in order to complete the rebase
 
-## Managing Repositories
+## Repositories
+
+### git clone
+
+Cloning a repository to a specific folder
+
+```bash
+git clone <repo_address>
+```
+
+Cloning to a specific folder
+
+```bash
+git clone <repo_address> <directory>
+```
+
+### git fetch
+
+Downloads contents from a remote repository
+
+```bash
+git fetch
+```
+
+### git pull
+
+Update the local repository with changes made at the remote site. Basilcally, it's the `git fetch` and `git merge` commands used together
+
+```bash
+git pull <options>
+```
+
+### git push
+
+Update the remote repository with changes made at the remote local
+
+```bash
+git push <repo_address>
+```
 
 ### git show
 
-Show details about a particular file or commit
+Show details about a particular item, such a file or commit
 
 ```bash
-git show [<options>] [<object>…​]
+git show <options> <object>
+```
+
+Show details about the local repository
+
+```bash
+git show-ref
+```
+
+Show details about the remote repository
+
+```bash
+git ls-remote <repo_address>
 ```
 
 Example: Shows a file from a particular commit
@@ -281,7 +335,7 @@ git gc
 
 ### git fsck
 
-check your repository for certain kinds of errors with the command. The most likely and harmless errors it will find will be dangling objects
+Check your repository for certain kinds of errors with the command. The most likely and harmless errors it will find will be dangling objects
 
 ```bash
 git fsck
@@ -289,7 +343,7 @@ git fsck
 
 ### git prune
 
-deletes all the files that are not reachable from the current branch
+Deletes all the files that are not reachable from the current branch
 
 ```bash
 git prune
@@ -297,4 +351,12 @@ git prune
 
 -n
 --dry-run
-Do not remove anything; just report what it would remove.
+Do not remove anything; just report what it would remove
+
+### git daemon
+
+A really simple server for Git repositories
+
+```bash
+git daemon <options>
+```
