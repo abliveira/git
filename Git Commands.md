@@ -1,3 +1,82 @@
+# Git Commands
+
+## Table of contents
+
+1. [Help commands](#help-commands)</br>
+    1.1. [git](#git)</br>
+    1.2. [git help](#git-help)</br>
+2. [Files](#files)</br>
+    2.1. [git add](#git-add)</br>
+    2.2. [git rm](#git-rm)</br>
+    2.3. [git mv](#git-mv)</br>
+    2.4. [git ls-files](#git-ls-files)</br>
+3. [Commits](#commits)</br>
+    3.1. [git commit](#git-commit)</br>
+    3.2. [git diff](#git-diff)</br>
+    3.3. [git status](#git-status)</br>
+    3.4. [git log](#git-log)</br>
+    3.5. [git revert](#git-revert)</br>
+    3.6. [git reset](#git-reset)</br>
+    3.7. [git blame](#git-blame)</br>
+    3.8. [git bisect](#git-bisect)</br>
+4. [Branches](#branches)</br>
+    4.1. [git branch](#git-branch)</br>
+    4.2. [git checkout](#git-checkout)</br>
+    4.3. [git merge](#git-merge)</br>
+    4.4. [git rebase](#git-rebase)</br>
+5. [Repositories](#repositories)</br>
+    5.1. [git clone](#git-clone)</br>
+    5.2. [git fetch](#git-fetch)</br>
+    5.3. [git pull](#git-pull)</br>
+    5.4. [git push](#git-push)</br>
+    5.5. [git show](#git-show)</br>
+    5.6. [git gc](#git-gc)</br>
+    5.7. [git fsck](#git-fsck)</br>
+    5.8. [git prune](#git-prune)</br>
+    5.9. [git daemon](#git-daemon)</br>
+
+## Help commands 
+
+### git
+
+Get a basic list of git commands
+
+```bash
+git
+```
+
+Get the git version installed
+
+```bash
+git --version
+```
+
+### git help
+
+Get a basic list of git commands
+
+```bash
+git help
+```
+
+Get a more complete set of commands
+
+```bash
+git help --all
+```
+
+Get help on a particular command
+
+```bash
+git help commit
+```
+
+Or
+
+```bash
+man git-commit
+```
+
 ## Files
 
 ### git add
@@ -33,7 +112,13 @@ Shows information about files in the index and working tree. By default, this co
 
 ### git commit
 
-only want to commit the changes to one file
+Shortcut command that immediately creates a commit with a passed commit message
+
+```bash
+git commit -m "commit message"
+```
+
+Only commit changes from one file
 
 ```bash
 git commit -s file1
@@ -89,9 +174,27 @@ It is possible to refine the search path
 git diff --stat one_commit another_commit directory1/directory2
 ```
 
+### git status
+
+Displays the state of the working directory and the staging area
+
+```bash
+git status
+```
+
 ### git log
 
-Display the history of commits with git using the command git log
+Display the history of commits
+
+```bash
+git log
+```
+
+Display a brief history of commits
+
+```bash
+git log --oneline
+```
 
 ### git revert
 
