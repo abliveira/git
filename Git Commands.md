@@ -360,6 +360,12 @@ After rebase
 
 Some conflicts may be solved in order to complete the rebase
 
+If git insists to pull the commits as they were before, which would duplicate the changes, you can force the push to overwrite the remote:
+
+```bash
+git push --force
+```
+
 ## Repositories
 
 ### git clone
