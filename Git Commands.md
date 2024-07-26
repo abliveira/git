@@ -240,7 +240,7 @@ Discard uncommitted changes
 
 ### git blame
 
-shows the commutis of a file and the author responsible
+shows the commits of a file and the author responsible
 
 ```bash
 git blame file
@@ -327,7 +327,7 @@ Switch from the current working branch to another
 git checkout [target_branch_name]
 ```
 
-Note: Git will refuse to change if there's uncommited files in the current working branch
+Note: Git will refuse to change if there's uncommitted files in the current working branch
 
 ### git merge
 
@@ -339,7 +339,7 @@ git merge [target_branch_name]
 
 ### git rebase
 
-If a branch was created from another, such the main branch, and the main branch had newer commits, it is possible to apply the commits from the main to the splited branch, pushing foward the commits of the splited branch. In summary, the splitted branch incorporate the latest changes from another branch, without yet merging this branch into the other branch
+If a branch was created from another, such the main branch, and the main branch had newer commits, it is possible to apply the commits from the main to the split branch, pushing forward the commits of the split branch. In summary, the split branch incorporate the latest changes from another branch, without yet merging this branch into the other branch
 
 ```bash
 $ git checkout develop
@@ -392,7 +392,7 @@ git fetch
 
 ### git pull
 
-Update the local repository with changes made at the remote site. Basilcally, it's the `git fetch` and `git merge` commands used together
+Update the local repository with changes made at the remote site. Basically, it's the `git fetch` and `git merge` commands used together
 
 ```bash
 git pull <options>
@@ -441,6 +441,13 @@ Optimize and compact the repository
 ```bash
 git gc
 ```
+
+Removes all unreachable objects immediately. More efficient, but also more risky
+
+```bash
+git gc --prune=now
+```
+
 
 ### git fsck
 
